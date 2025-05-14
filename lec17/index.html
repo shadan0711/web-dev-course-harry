@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class selector */
+        .red{
+            background-color: brown;
+        }
+        /* ID selector */
+        #green{
+            background-color: green;
+        }
+        /* child selector */
+        div > p{
+            color: blue;
+            background-color: blanchedalmond;
+        }
+        /* Descendent selector */
+        div p{
+            color: pink;
+            background-color: blueviolet;
+        }
+        /* Universal selector */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* pseudo selector */
+        a:visited{
+            color: aquamarine;
+        }
+        a:link{
+            color: rgb(247, 68, 98);
+        }
+        a:hover{
+            background-color: rgb(15, 190, 149);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="red">
+        I m a div
+        <P>I am para inside Div</P>
+    </div>
+    <div id="green" >
+        im another div
+    </div>
+    <a href="https://www.google.com"> Go to GOOGLE</a>
+    
+</body>
+</html>
