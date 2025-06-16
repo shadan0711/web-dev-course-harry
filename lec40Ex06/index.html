@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Edits By Shadan </title>
+    <style>
+        .top_part {
+            display: flex;
+            /* border: 2px solid black; */
+            margin: 10px;
+        }
+
+        .top1 {
+            margin: 20px;
+            padding-right: 20%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-left: auto;
+            padding-right: 30px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #007bff;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        /* .top2 {
+            margin: 30px;
+        }
+
+        .top3 {
+            margin: 30px;
+        }
+
+        .top4 {
+            margin: 30px;
+        }
+
+        .top5 {
+            margin: 30px;
+        }
+
+        .top6 {
+            margin: 30px;
+        }
+
+        .top7 {
+            margin: 30px;
+        } */
+
+        .doc {
+            /* border: 2px solid blue; */
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+
+
+        }
+
+        .para {
+            /* border: 2px solid pink; */
+            display: flex;
+            color: #333;
+            padding: 10px;
+            margin-top: 10px;
+            justify-content: center;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+        .container-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            padding: 14px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            background-color: #00b3e3;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #009cc6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+            /* border: 2px solid black; */
+            background-color: white;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        .doc h1 {
+            font-size: 48px;
+            font-weight: 400;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .bold {
+            font-weight: 700;
+            /* Bolder for UltraEdit */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+            color: #333;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 36px;
+            height: 36px;
+            background-color: #f0f0f0;
+            /* optional: light gray background */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-text {
+            font-size: 22px;
+        }
+
+        .download-section {
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        /* Heading styles */
+        .download-section h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .download-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Grid container */
+        .download-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Individual card styles */
+        .download-card {
+            background-color: white;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .download-card h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .download-card p {
+            margin: 8px 0;
+            color: #444;
+        }
+
+        /* Download button */
+        .download-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-button:hover {
+            background-color: #218838;
+        }
+
+        /* SHA256 hash styling */
+        .hash-label {
+            font-weight: bold;
+            margin-top: 15px !important;
+            color: #555;
+        }
+
+        .hash-value {
+            font-family: monospace;
+            font-size: 10px !important;
+            color: #999;
+            word-break: break-word;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-left .logo {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-right a {
+            margin-left: 25px;
+            color: #111;
+            text-decoration: none;
+            font-size: 30px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-right a:hover {
+            color: #00bcd4;
+        }
+
+        .signature {
+            position: fixed;
+            right: 20px;
+            bottom: 10px;
+            font-size: 14px;
+            font-family: 'Pacifico', cursive;
+            color: #888;
+            z-index: 1000;
+            opacity: 0.9;
+        }
+
+        .signature-name {
+            font-weight: normal;
+            font-style: italic;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header class="top_part">
+        <div class="top1">UltraEdit</div>
+        <div class="top2">Products</div>
+        <div class="top3">For Bussines</div>
+        <div class="top4">Resources</div>
+        <div class="top5">Academic Licensing </div>
+        <div class="top6">Our company</div>
+        <div class="top7">English</div>
+    </header> -->
+    <header class="top_part">
+        <nav class="navbar">
+            <div class="top1 logo">
+                <div class="logo-circle">
+                    <img src="https://www.colourcraftdirect.com/wp-content/uploads/2018/07/products-goldenyellow_A4.jpg.webp"
+                        alt="UltraEdit Logo" class="logo-icon">
+                </div>
+                <span class="logo-text">UltraEdit</span>
+            </div>
+
+
+            <!-- <a class="top1"href="#">UltraEdit</a> -->
+            <nav class="nav-links">
+                <a href="#" class="nav-item">Products</a>
+                <a href="#" class="nav-item">For Business</a>
+                <a href="#" class="nav-item">Resources</a>
+                <a href="#" class="nav-item">Academic Licensing</a>
+                <a href="#" class="nav-item">Our Company</a>
+                <a href="#" class="nav-item">English</a>
+            </nav>
+        </nav>
+    </header>
+    <div class="doc">
+        <h1>Download <span class="bold">UltraEdit</span> for Windows</h1>
+    </div>
+    <div class="para">
+        <p>Download and try UltraEdit before you buy it! This download includes the full Windows version of the text
+            editor.</p>
+    </div>
+    <div class="container-button">
+        <button class="button">DOWNLOAD MAC OR LINUX VERSION</button>
+    </div>
+    <section class="download-section">
+        <div class="download-header">
+            <!-- <img src="https://www.colourcraftdirect.com/wp-content/uploads/2018/07/products-goldenyellow_A4.jpg.webp" -->
+            <!-- alt="UltraEdit Logo" class="ue-logo" /> -->
+            <h2>Download UltraEdit</h2>
+            <p>v2024.3.0.15 (released 2025-04-25) | <a href="#">Hotfix information</a></p>
+        </div>
+
+        <div class="download-grid">
+            <div class="download-card">
+                <h3>English</h3>
+                <p>Spanish</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">F710B7F8A1498AAD9D9F7090192DA527907C05D9C8C843F55A0569<br>3229D91AE27</p>
+            </div>
+
+            <div class="download-card">
+                <h3>Deutsch</h3>
+                <p>German</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+            <div class="download-card">
+                <h3>Italiano</h3>
+                <p>Italian</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+            <div class="download-card">
+                <h3>Español</h3>
+                <p>Spanish</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+            <div class="download-card">
+                <h3>français</h3>
+                <p>French</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+            <div class="download-card">
+                <h3>Português brasileiro</h3>
+                <p>Brazilian Portuguese</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+
+            <div class="download-card">
+                <h3>日本</h3>
+                <p>Japanese</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+
+            <div class="download-card">
+                <h3>한국어</h3>
+                <p>Korean</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+
+
+            <div class="download-card">
+                <h3>华语</h3>
+                <p>Chinese</p>
+                <button class="download-button">Download 64-bit</button>
+                <p class="hash-label">SHA256</p>
+                <p class="hash-value">96281171482C8A2BAC62135C27E9462F618096A9C5F73D7B87FDE<br>B9A0F4B0DE</p>
+            </div>
+        </div>
+        <footer class="footer-bottom">
+            <div class="footer-left">
+                <h2>UltraEdit </h2>
+                <!-- <img  alt="UltraEdit Logo" class="logo"> -->
+                <span>©2025 UltraEdit. All rights reserved</span>
+            </div>
+            <div class="footer-right">
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-reddit"></i></a>
+            </div>
+        </footer>
+    </section>
+    <div class="signature">
+        Design by <span class="signature-name">Shadan Khan</span>
+    </div>
+</body>
+
+</html>

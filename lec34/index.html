@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS float and clear</title>
+    <style>
+        .cards{
+            border: 2px solid black;
+            display: flow-root;
+        }
+        .card{
+            border: 2px solid violet;
+            padding: 10px;
+            margin: 5px;
+        }
+        img{
+            float:left;
+        }
+        .card:nth-child(3){
+            background-color:aqua;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcyRHM5uhir5dYo2roEhJjLh08_pRzMWMg9y7hO5r6-NoZuPJ5vm7EyjxsDCFFulZ5ywA&usqp=CAU" alt="">
+        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quo tempora fuga quidem soluta officiis blanditiis ex. Culpa non eum voluptatem deleniti voluptatum adipisci fugit corporis maiores sit delectus. Temporibus tempora repellendus numquam non, vel illo iste consequatur laborum impedit maxime ipsam corrupti optio necessitatibus, cum fuga? Voluptate, praesentium quos! 1</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam rem commodi delectus quos itaque alias, sint qui voluptate reprehenderit atque enim pariatur incidunt minima id obcaecati at quidem, animi illo vel soluta ullam nemo dolores est assumenda! Praesentium ad facilis repellendus odio, veniam assumenda recusandae aspernatur! Facilis ipsam nobis error expedita animi ab aspernatur officiis veritatis repellat magni explicabo maxime sunt quaerat, itaque qui quod odio beatae iusto dolorum quisquam laudantium cum. Necessitatibus, aspernatur molestias. Aut quas, cupiditate voluptatum eum atque impedit incidunt culpa at optio mollitia labore error accusamus quo veritatis consequatur quidem ullam voluptates molestias necessitatibus quos ab? 2</div>
+        <div class="card">Card 3</div>
+    </div>
+</body>
+</html>

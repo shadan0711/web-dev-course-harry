@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* .box:first-child{
+            background-color: aqua;
+        } */
+        /* .box::first-line{
+            color: blueviolet;
+        }
+        .boxes *{
+            color: blue;
+            border: 2px solid black;
+        } */
+
+        /* .box:nth-child(odd){
+            color: brown;
+        } */
+
+        .boxes::before{
+            content: "Shadan is learning web dev";
+            color: aqua;
+        }
+        .boxes::after{
+            content: "Shadan is learning german";
+            color: blueviolet;
+        }
+        .boxes::selection{
+            background-color: rgb(78, 78, 78);
+            color: rgb(152, 242, 207);
+        }
+        .box::first-letter{
+            color: peru;
+            font-size: 25px;
+        }
+        input::placeholder{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nesciunt, eaque, amet veritatis accusantium corporis fugit assumenda fuga quae veniam mollitia architecto porro distinctio modi rerum est voluptates dignissimos non hic, sit fugiat nisi. Veritatis, aspernatur reprehenderit magnam eligendi delectus consequatur explicabo ullam nisi deleniti quas voluptates! Pariatur harum maiores iste voluptatem nulla obcaecati voluptatibus deserunt facere dolore! Maxime illum, libero reprehenderit cum adipisci laudantium saepe at, qui quibusdam, eum fugiat doloremque distinctio a molestias sed. Itaque aperiam, sint minima at blanditiis aspernatur officiis ducimus! Atque ullam ipsum tempora repellat eaque, perferendis iure impedit. Natus hic eaque officiis veniam ratione?</div>
+        <div class="box">I am a box</div>
+        <div class="box">I am a box</div>
+        <input type="text" placeholder="Type your name here ">
+    </div>
+</body>
+</html>

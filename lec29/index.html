@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <style>
+        .parent {
+            background-color: rgb(100, 236, 236);
+            align-items: center;
+            height: 500px;
+            width: 30vw;
+            padding: 3px;
+            margin: 4px;
+            border: 2px solid black;
+            position: relative;
+            top: 1cm;
+            left: 10cm;
+            border-radius: 10px;
+        }
+
+
+        .box1 {
+            height: 200px;
+            width: 28vw;
+            /* padding: 3px; */
+            margin: 10px;
+            /* left: 5px; */
+            border: 2px solid black;
+            border-radius: 15px;
+
+        }
+
+        .capsule-container {
+            display: flex;
+            gap: 10px;
+            margin: 12px;
+        }
+
+        .capsule {
+            padding: 6px 10px;
+            border: 2px solid black;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        .box-heading {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin: 5px 0;
+            padding: 0 20px;
+        }
+
+        .bottom-left-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 12px 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box1">
+            <img width="100%" height="100%" style="border-radius: 10px;" src="image.png" alt="Muisc" srcset="">
+        </div>
+        <div class="capsule-container">
+            <div class="capsule">Next</div>
+            <div class="capsule">Loop</div>
+        </div>
+        <h2 class="box-heading">Music is Peace</h2>
+        <p class="description">Music is a universal language that expresses emotions, tells stories, and connects people
+            across cultures. It can soothe, energize, inspire, or heal. Whether through melodies, rhythms, or lyrics,
+            music enriches our lives and memories. From classical to contemporary, it reflects human creativity and
+            brings joy to everyday moments..</p>
+
+        <button class="bottom-left-btn"> Play </button>
+    </div>
+
+</body>
+
+</html>
