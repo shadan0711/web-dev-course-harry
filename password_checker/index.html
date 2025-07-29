@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Validator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+  
+    h1 {
+      color: #333;
+    }
+  
+    input[type="password"] {
+      padding: 10px;
+      width: 250px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #0056b3;
+    }
+  
+    #result {
+      margin-top: 20px;
+      width: 300px;
+      text-align: left;
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  
+    #result .success {
+      color: green;
+    }
+  
+    #result .error {
+      color: red;
+    }
+    #strength-meter {
+  width: 250px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+#strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+  </style>
+  
+</head>
+<body>
+  <h1>Password Validator</h1>
+
+  <label for="password">Enter Password:</label>
+  <input type="password" id="password" placeholder="Type your password">
+  <div id="strength-meter">
+    <div id="strength-bar"></div>
+  </div>
+  
+  <button onclick="validatePassword()">Check Password</button>
+
+  <div id="result"></div>
+  <script>
+    function validatePassword() {
+  const password = document.getElementById("password").value;
+  const result = document.getElementById("result");
+  const strengthBar = document.getElementById("strength-bar");
+
+  let messages = [];
+  let strength = 0;
+
+  if (password.length >= 10) {
+    messages.push("✅ Length is sufficient.");
+    strength++;
+  } else {
+    messages.push("❌ Password must be at least 10 characters long.");
+  }
+
+  if (/[A-Z]/.test(password)) {
+    messages.push("✅ Contains uppercase letter.");
+    strength++;
+  } else {
+    messages.push("❌ Must include at least one uppercase letter.");
+  }
+
+  if (/[a-z]/.test(password)) {
+    messages.push("✅ Contains lowercase letter.");
+    strength++;
+  } else {
+    messages.push("❌ Must include at least one lowercase letter.");
+  }
+
+  if (/[0-9]/.test(password)) {
+    messages.push("✅ Contains a number.");
+    strength++;
+  } else {
+    messages.push("❌ Must include at least one number.");
+  }
+
+  if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    messages.push("✅ Contains special character.");
+    strength++;
+  } else {
+    messages.push("❌ Must include at least one special character.");
+  }
+
+  // Update result display
+  result.innerHTML = messages.map(msg => {
+    return `<div class="${msg.startsWith('✅') ? 'success' : 'error'}">${msg}</div>`;
+  }).join("");
+
+  // Update strength bar
+  let width = strength * 20; // 5 conditions = max 100%
+  strengthBar.style.width = width + "%";
+
+  if (strength <= 2) {
+    strengthBar.style.backgroundColor = "red";
+  } else if (strength === 3 || strength === 4) {
+    strengthBar.style.backgroundColor = "orange";
+  } else {
+    strengthBar.style.backgroundColor = "green";
+  }
+}
+
+  </script>
+  
+</body>
+</html>

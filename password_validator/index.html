@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Validator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #0077cc;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="password"] {
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #validation-result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 320px;
+    }
+
+    .valid {
+      color: green;
+    }
+
+    .invalid {
+      color: red;
+    }
+
+    #final-message {
+  margin-top: 15px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+#final-message.show {
+  opacity: 1;
+}
+
+  </style>
+
+  </style>
+</head>
+<body>
+  <h1>Password Validator</h1>
+  <form id="password-form">
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" name="password" />
+    <button type="submit">Submit</button>
+  </form>
+  
+  <p id="final-message"></p>  <!-- Success or error message will appear here -->
+  
+  <!-- <div id="validation-result"> -->
+    <div id="validation-result">
+        <ul>
+          <li id="lowercase" class="invalid">At least one <b>lowercase</b> letter</li>
+          <li id="uppercase" class="invalid">At least one <b>uppercase</b> letter</li>
+          <li id="number" class="invalid">At least one <b>number</b></li>
+          <li id="special" class="invalid">At least one <b>special character</b></li>
+          <li id="length" class="invalid">Minimum <b>10 characters</b></li>
+        </ul>
+      </div>
+      
+  <!-- </div> -->
+  <script>
+    const passwordInput = document.getElementById('password');
+  
+    passwordInput.addEventListener('input', function () {
+      const password = passwordInput.value;
+  
+      // Regular expressions for each check
+      const hasLowercase = /[a-z]/.test(password);
+      const hasUppercase = /[A-Z]/.test(password);
+      const hasNumber = /[0-9]/.test(password);
+      const hasSpecial = /[^A-Za-z0-9]/.test(password);
+      const hasLength = password.length >= 10;
+  
+      // Update checklist items
+      document.getElementById('lowercase').className = hasLowercase ? 'valid' : 'invalid';
+      document.getElementById('uppercase').className = hasUppercase ? 'valid' : 'invalid';
+      document.getElementById('number').className    = hasNumber ? 'valid' : 'invalid';
+      document.getElementById('special').className   = hasSpecial ? 'valid' : 'invalid';
+      document.getElementById('length').className    = hasLength ? 'valid' : 'invalid';
+    });
+    const form = document.getElementById('password-form');
+const messageBox = document.getElementById('final-message');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent page reload
+
+  const password = passwordInput.value;
+
+  const hasLowercase = /[a-z]/.test(password);
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSpecial = /[^A-Za-z0-9]/.test(password);
+  const hasLength = password.length >= 10;
+
+  // Remove the "show" class so animation can re-trigger
+  messageBox.classList.remove('show');
+
+  if (hasLowercase && hasUppercase && hasNumber && hasSpecial && hasLength) {
+    messageBox.textContent = '✅ Password is strong!';
+    messageBox.style.color = 'green';
+  } else {
+    messageBox.textContent = '❌ Try again. Password does not meet all requirements.';
+    messageBox.style.color = 'red';
+  }
+
+  // Let DOM update first, then add 'show' again
+  setTimeout(() => {
+    messageBox.classList.add('show');
+  }, 10);
+});
+
+
+
+  </script>
+  
+</body>
+</html>

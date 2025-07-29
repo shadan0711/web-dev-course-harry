@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hacker Simulator</title>
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      padding: 20px;
+      white-space: pre-line;
+    }
+
+    .blinking {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+
+  <script>
+    const messages = [
+      "Initializing Hacking...",
+      "Reading your Files...",
+      "Password files Detected...",
+      "Sending all passwords and personal files to server...",
+      "Cleaning up..."
+    ];
+
+    const terminal = document.getElementById("terminal");
+
+    function getRandomDelay() {
+      return Math.floor(Math.random() * 7000) + 1000; // 1 to 7 seconds
+    }
+
+    // Typewriter animation for each line
+    function typeWriterEffect(text, container) {
+      return new Promise((resolve) => {
+        let i = 0;
+        const span = document.createElement("span");
+
+        container.appendChild(span);
+
+        function typeChar() {
+          if (i < text.length) {
+            span.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeChar, 50); // typing speed
+          } else {
+            resolve(); // done typing
+          }
+        }
+
+        typeChar();
+      });
+    }
+
+    async function showMessages() {
+      for (let msg of messages) {
+        const line = document.createElement("div");
+        terminal.appendChild(line);
+        await typeWriterEffect(msg, line);                  // animate
+        await new Promise(r => setTimeout(r, getRandomDelay())); // pause after line
+      }
+
+      // Add blinking dots
+      const dotsLine = document.createElement("div");
+      dotsLine.innerHTML = 'Waiting<span class="blinking">...</span>';
+      terminal.appendChild(dotsLine);
+    }
+
+    showMessages();
+  </script>
+</body>
+</html>
+
+
+ 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Simulator</title>
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      padding: 20px;
+      white-space: pre-line;
+    }
+
+    .blinking {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+
+  <script>
+    const messages = [
+      "Initializing Hacking...",
+      "Reading your Files...",
+      "Password files Detected...",
+      "Sending all passwords and personal files to server...",
+      "Cleaning up..."
+    ];
+
+    const terminal = document.getElementById("terminal");
+
+    function getRandomDelay() {
+      return Math.floor(Math.random() * 7000) + 1000; // 1 to 7 seconds
+    }
+
+    async function showMessages() {
+      for (let msg of messages) {
+        const line = document.createElement("div");
+        line.textContent = msg;
+        terminal.appendChild(line);
+        await new Promise(resolve => setTimeout(resolve, getRandomDelay()));
+      }
+
+      // Add blinking dots after all messages
+      const dotsLine = document.createElement("div");
+      dotsLine.innerHTML = 'Waiting<span class="blinking">...</span>';
+      terminal.appendChild(dotsLine);
+    }
+
+    showMessages();
+  </script>
+</body>
+</html>
